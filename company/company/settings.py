@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'departments',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -97,6 +98,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+STATIC_URL = '/static/'
 
 if not DEBUG:
     STATIC_ROOT = '/var/www/html/static/'

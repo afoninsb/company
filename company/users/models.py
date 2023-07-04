@@ -2,15 +2,12 @@ from django.core.validators import MinValueValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# from departments.models import Department, Position
-
 
 class Employee(AbstractUser):
     """Модель сотрудника."""
     first_name = models.CharField(verbose_name='Имя', max_length=50)
     surname = models.CharField(verbose_name='Отчество', max_length=50)
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)
-    email = None
     password = models.CharField(verbose_name='Пароль', max_length=128)
     photo = models.ImageField(verbose_name='Изображение', upload_to='uploads/')
     position = models.ForeignKey(
@@ -32,8 +29,12 @@ class Employee(AbstractUser):
         validators=(
             MinValueValidator(1, 'Должно быть целое число, большее 0'),
         ),
+        default=13617
     )
-    birthday = models.DateField(verbose_name='День рождения')
+    birthday = models.DateField(
+        verbose_name='День рождения',
+        default='2000-01-01'
+        )
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []

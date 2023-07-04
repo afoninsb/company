@@ -1,7 +1,5 @@
 from django.db import models
 
-# from users.models import Employee
-
 
 class Position(models.Model):
     """Модель должности."""
@@ -9,6 +7,10 @@ class Position(models.Model):
         verbose_name='Должность',
         max_length=100
     )
+
+    class Meta:
+        verbose_name = 'Должность'
+        verbose_name_plural = 'Должности'
 
     def __str__(self):
         return self.name
@@ -25,7 +27,8 @@ class Department(models.Model):
         verbose_name='Директор',
         on_delete=models.SET_NULL,
         related_name='dir_department',
-        null=True
+        null=True,
+        blank=True
     )
 
     class Meta:
