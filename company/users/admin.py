@@ -6,6 +6,7 @@ from users.models import Employee
 @admin.register(Employee)
 class RecipeAdmin(admin.ModelAdmin):
     """Представление сотрудников в админ-панели."""
+
     list_display = (
         'last_name',
         'first_name',

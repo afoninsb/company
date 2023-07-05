@@ -3,6 +3,7 @@ from django.db import models
 
 class Position(models.Model):
     """Модель должности."""
+
     name = models.CharField(
         verbose_name='Должность',
         max_length=100
@@ -18,6 +19,7 @@ class Position(models.Model):
 
 class Department(models.Model):
     """Модель департамента."""
+
     name = models.CharField(
         verbose_name='Департамент',
         max_length=100

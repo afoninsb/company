@@ -5,6 +5,7 @@ from django.db import models
 
 class Employee(AbstractUser):
     """Модель сотрудника."""
+
     first_name = models.CharField(verbose_name='Имя', max_length=50)
     surname = models.CharField(verbose_name='Отчество', max_length=50)
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)

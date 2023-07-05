@@ -10,6 +10,7 @@ from api.serializers.positions import PositionSerializer
 
 class EmployeeGetListSerializer(serializers.ModelSerializer):
     """Сериализатор модели Employee - GET, LIST."""
+
     photo = serializers.ImageField(use_url=True)
     position = PositionSerializer()
     department = DepartmentUserSerializer()

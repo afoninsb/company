@@ -5,5 +5,6 @@ from rest_framework import viewsets
 
 class DepartmentsViewSet(viewsets.ReadOnlyModelViewSet):
     """Список департаментов."""
+
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
