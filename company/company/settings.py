@@ -24,6 +24,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
+    'django_filters',
     'users',
     'departments',
     'api',
@@ -89,6 +93,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    )
 }
 
 LANGUAGE_CODE = 'en-us'
@@ -115,4 +122,4 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-UNUSED_USERNAME = 'me'
+EMPLOYEES_PER_PAGE = 5

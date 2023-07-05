@@ -47,14 +47,6 @@ class EmployeePostPatchSerializer(serializers.ModelSerializer):
             'photo', 'position', 'department', 'salary', 'birthday', 'is_staff'
         )
 
-    def validate_username(self, value):
-        """Проверяем, что username не равен me."""
-        if value.lower() == settings.UNUSED_USERNAME:
-            raise serializers.ValidationError(
-                f'Username не может быть {settings.UNUSED_USERNAME}'
-            )
-        return value
-
 
 class DirectorSerializer(serializers.ModelSerializer):
     """Сериализатор модели Employee для директора."""
