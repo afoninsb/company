@@ -6,8 +6,36 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from api.pagination import Pagination
+from drf_yasg.utils import swagger_auto_schema
 
 
+@swagger_auto_schema(
+    method='get',
+    operation_description='GET /users/',
+    responses={200: EmployeeGetListSerializer(many=True)}
+)
+@swagger_auto_schema(
+    method='get',
+    operation_description='GET /users/{id}/',
+    responses={200: EmployeeGetListSerializer(),
+               404: 'user not found'}
+)
+@swagger_auto_schema(
+    method='post',
+    operation_description='POST /users/',
+    responses={200: EmployeePostPatchSerializer()}
+)
+@swagger_auto_schema(
+    method='put',
+    operation_description='PUT /users/{id}/',
+    responses={200: EmployeePostPatchSerializer(),
+               404: 'user not found'}
+)
+@swagger_auto_schema(
+    method='delete',
+    operation_description='DELETE /users/{id}/',
+    responses={201: 'user deleted', 404: 'user not found'}
+)
 class UsersViewSet(viewsets.ModelViewSet):
     """Работа с информацией о пользователях."""
 
