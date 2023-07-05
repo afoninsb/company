@@ -12,12 +12,12 @@ from users.models import Employee
 class DirectorSerializer(serializers.ModelSerializer):
     """Сериализатор модели Employee для директора."""
 
-    photo = serializers.ImageField(use_url=True)
+    image = serializers.ImageField(use_url=True)
 
     class Meta:
         model = Employee
-        fields = ('last_name', 'first_name', 'surname', 'photo')
-        read_only_fields = ('last_name', 'first_name', 'surname', 'photo')
+        fields = ('last_name', 'first_name', 'surname', 'image')
+        read_only_fields = ('last_name', 'first_name', 'surname', 'image')
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
@@ -58,14 +58,14 @@ class PositionSerializer(serializers.ModelSerializer):
 class EmployeeGetListSerializer(serializers.ModelSerializer):
     """Сериализатор модели Employee - GET, LIST."""
 
-    photo = serializers.ImageField(use_url=True)
+    image = serializers.ImageField(use_url=True)
     position = PositionSerializer()
     department = DepartmentUserSerializer()
 
     class Meta:
         model = Employee
         fields = (
-            'id', 'last_name', 'first_name', 'surname', 'username', 'photo',
+            'id', 'last_name', 'first_name', 'surname', 'username', 'image',
             'position', 'department', 'salary', 'birthday', 'is_staff',
         )
 
@@ -87,13 +87,13 @@ class EmployeePostPatchSerializer(UserCreateSerializer):
         queryset=Position.objects.all())
     department = serializers.PrimaryKeyRelatedField(
         queryset=Department.objects.all())
-    photo = Base64ImageField()
+    image = Base64ImageField()
     password = serializers.CharField(write_only=True)
 
     class Meta:
         model = Employee
         fields = (
-            'id', 'last_name', 'first_name', 'surname', 'photo',
+            'id', 'last_name', 'first_name', 'surname', 'image',
             'position', 'department', 'salary', 'birthday', 'is_staff',
-            'username', 'password'
+            'username', 'password',
         )

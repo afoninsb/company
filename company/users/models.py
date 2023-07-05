@@ -11,7 +11,7 @@ class Employee(AbstractUser):
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)
     password = models.CharField(verbose_name='Пароль', max_length=128)
     username = models.CharField(max_length=50, unique=True)
-    photo = models.ImageField(verbose_name='Фото', upload_to='uploads/')
+    image = models.ImageField(verbose_name='Фото', upload_to='uploads/')
     position = models.ForeignKey(
         to='departments.Position',
         verbose_name='Должность',

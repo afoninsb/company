@@ -1,4 +1,3 @@
-# from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
@@ -18,7 +17,6 @@ class UsersViewSet(viewsets.ModelViewSet):
         'position').select_related('department')
     http_method_names = ('get', 'post', 'put', 'delete')
     pagination_class = Pagination
-    # filter_backends = (DjangoFilterBackend, )
     filterset_class = EmployeesFilter
 
     def get_serializer_class(self):

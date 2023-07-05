@@ -19,7 +19,7 @@ class UserCreationForm(forms.ModelForm):
         model = Employee
         fields = (
             'id', 'last_name', 'first_name', 'surname', 'username', 'password',
-            'photo', 'position', 'department', 'salary', 'birthday',
+            'image', 'position', 'department', 'salary', 'birthday',
             'is_staff',
         )
 
@@ -52,7 +52,7 @@ class UserChangeForm(forms.ModelForm):
         model = Employee
         fields = (
             'id', 'last_name', 'first_name', 'surname', 'username',
-            'password', 'photo', 'position', 'department', 'salary',
+            'password', 'image', 'position', 'department', 'salary',
             'birthday', 'is_staff'
         )
 
@@ -69,7 +69,7 @@ class EmploeeAdmin(BaseUserAdmin):
         'first_name',
         'surname',
         'username',
-        'photo',
+        'image',
         'position',
         'department',
         'salary',
@@ -79,7 +79,7 @@ class EmploeeAdmin(BaseUserAdmin):
         ("ФИО", {"fields": ["last_name", "first_name", "surname"]}),
         ("ЛОГИН", {"fields": ["username", "password"]}),
         ("ИНФО", {"fields":
-                  ["photo", "position", "department", "salary", "is_staff"]}),
+                  ["image", "position", "department", "salary", "is_staff"]}),
     ]
     list_filter = ('is_staff', 'department', 'position')
     search_fields = ('last_name',)
