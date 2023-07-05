@@ -13,7 +13,7 @@ class UsersViewSet(viewsets.ModelViewSet):
 
     queryset = Employee.objects.select_related(
         'position').select_related('department')
-    http_method_names = ('get', 'post', 'patch', 'delete')
+    http_method_names = ('get', 'post', 'put', 'delete')
     pagination_class = Pagination
     filter_backends = (DjangoFilterBackend, )
     filterset_class = EmployeesFilter
