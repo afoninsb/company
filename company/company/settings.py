@@ -114,3 +114,5 @@ else:
     MEDIA_ROOT = '/var/www/html/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+UNUSED_USERNAME = 'me'
