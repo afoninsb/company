@@ -1,12 +1,11 @@
 from django.urls import include, path
-from api.views.departments import DepartmentsViewSet
-from api.views.positions import PositionsViewSet
-from api.views.users import UsersViewSet
 from djoser.views import UserViewSet as DjoserUserViewSet
-from rest_framework.routers import SimpleRouter
-from rest_framework import permissions
-from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+from rest_framework.routers import SimpleRouter
+
+from api.views import DepartmentsViewSet, PositionsViewSet, UsersViewSet
 
 
 schema_view = get_schema_view(

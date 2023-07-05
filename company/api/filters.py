@@ -1,5 +1,6 @@
-from users.models import Employee
 from django_filters import rest_framework as filters
+
+from users.models import Employee
 
 
 class EmployeesFilter(filters.FilterSet):

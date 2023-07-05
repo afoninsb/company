@@ -1,5 +1,5 @@
-from django.core.validators import MinValueValidator
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MinValueValidator
 from django.db import models
 
 
@@ -10,7 +10,8 @@ class Employee(AbstractUser):
     surname = models.CharField(verbose_name='Отчество', max_length=50)
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)
     password = models.CharField(verbose_name='Пароль', max_length=128)
-    photo = models.ImageField(verbose_name='Изображение', upload_to='uploads/')
+    username = models.CharField(max_length=50, unique=True)
+    photo = models.ImageField(verbose_name='Фото', upload_to='uploads/')
     position = models.ForeignKey(
         to='departments.Position',
         verbose_name='Должность',
@@ -36,6 +37,7 @@ class Employee(AbstractUser):
         verbose_name='День рождения',
         default='2000-01-01'
         )
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
