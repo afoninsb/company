@@ -51,7 +51,7 @@ DB_PORT=5432
 
 http://127.0.0.1/admin/ -админпанель Django
 
-http://127.0.0.1/api/redocs/ - описание API в формате Redoc
+http://127.0.0.1/api/redoc/ - описание API в формате Redoc
 
 http://127.0.0.1/api/swagger/ - описание API в формате Swagger
 
