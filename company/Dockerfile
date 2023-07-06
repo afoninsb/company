@@ -12,6 +12,7 @@ COPY ../requirements.txt .
 RUN pip3 install -r requirements.txt --no-cache-dir
 
 COPY . .
+
 COPY ./media /var/www/html/media/
 
 CMD ["gunicorn", "company.wsgi:application", "--bind", "0:8000" ]
