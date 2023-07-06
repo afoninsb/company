@@ -21,7 +21,7 @@ DEBUG=False
 SECRET_KEY="django-insecure-dfdsfsdsfvohd;vn8e6t345dfgshijlgv_oem#$t8wsds&sz"
 
 DB_ENGINE=django.db.backends.postgresql
-POSTGRES_DB=postgres
+POSTGRES_DB=testdb
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 DB_HOST=db
@@ -32,7 +32,7 @@ DB_PORT=5432
 
 ```bash
   cd <путь_до_папки_проекта>/company/infra
-  docker-compose up -d --build
+  docker-compose up --build
 ```
 
 Запустите ещё один терминал, перейдите в папку '/infra/' и запустите скрипт run.sh:
@@ -58,7 +58,7 @@ http://127.0.0.1/api/swagger/ - описание API в формате Swagger
 
 ## Очистка компьютера
 
-После теста приложения вы можете очистить свой компьютер от созданных приложением артефактов: образов, разделов и т.д.
+После теста приложения вы можете очистить свой компьютер от созданных приложением артефактов: контейнеров, образов, томов.
 
 Запустите терминал, перейдите в папку '/infra/' и запустите скрипт clean.sh:
 ```bash
