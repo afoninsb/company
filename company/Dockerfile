@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install curl python3-pip lib
 
 WORKDIR ${HOME}/
 
-COPY ../requirements.txt .
+COPY requirements.txt .
 
 RUN pip3 install -r requirements.txt --no-cache-dir
 

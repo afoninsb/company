@@ -115,19 +115,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/django/'
 
-if not DEBUG:
-    STATIC_ROOT = '/var/www/html/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'django')
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+MEDIA_URL = '/media/django/'
 
-MEDIA_URL = '/media/'
-
-if DEBUG:
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-else:
-    MEDIA_ROOT = '/var/www/html/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media', 'django')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

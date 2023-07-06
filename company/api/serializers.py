@@ -3,8 +3,9 @@ from uuid import uuid1
 
 from django.core.files.base import ContentFile
 from django.db.models import Sum
-from rest_framework import serializers
 from djoser.serializers import UserCreateSerializer
+from rest_framework import serializers
+
 from departments.models import Department, Position
 from users.models import Employee
 
@@ -87,7 +88,7 @@ class EmployeePostPatchSerializer(UserCreateSerializer):
         queryset=Position.objects.all())
     department = serializers.PrimaryKeyRelatedField(
         queryset=Department.objects.all())
-    image = Base64ImageField()
+    image = Base64ImageField(write_only=True)
     password = serializers.CharField(write_only=True)
 
     class Meta:
