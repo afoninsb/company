@@ -15,7 +15,7 @@ SECRET_KEY = os.getenv(
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = ('localhost', '127.0.0.1')
+ALLOWED_HOSTS = ('localhost', '127.0.0.1', 'web')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
