@@ -3,7 +3,7 @@
 
 ## Стек технологий
 
-Python 3.10, Django 4.2.3, DjangoRestFramework 3.14.0, drf-yasg 1.21.5, Docker, Docker-compose
+Python 3.10, Django 4.2.3, Django REST Framework 3.14.0, drf-yasg 1.21.5, Docker, Docker-compose
 
 
 ## Локальный запуск
